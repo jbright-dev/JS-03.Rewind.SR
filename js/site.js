@@ -6,7 +6,7 @@ function getValues(){
     /* Within the scope-block of the function Create variables that are defined as values contained within the elements possesing the id of the scanned the document*/
     let message = document.getElementById("message").value;
         
-    /*Call the displayValues function using the parameter of numbers, which was passed into the function*/
+    /*Call the displayValues function using the parameter of numbers, which was passed through from the previous function*/
     let revMessage = reverse(message);
 
     /*Within the else portion  of the statement enter the Sweet Alert*/
@@ -24,7 +24,7 @@ function reverse(message){
     let reverseMessage = "";
 
     //Create a for-loop which declares a variable of i. the variable of i will consist of the previously defined "start" paramenter and as long as "i" is less than the previously defined stop, add 1 to the value. decrementing forloop 
-    for (let index = message.length-1; index >= 0; index--) {
+    for (let index = message.length-1; index >= 0; index--){
 
         reverseMessage += message[index];
 
