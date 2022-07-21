@@ -1,54 +1,56 @@
 //Create the Controller Function
 
-//Declare a new function that calls the built in getValues function the numbers
+//Declare a new function that calls the built-in getValues function the numbers
 function getValues(){
 
-    /* Within the scope-block of the function Create variables that are defined as values contained within the elements possesing the id of the scanned the document*/
+    /* Within the scope-block of the function create a variable of messge that is defined as the value of the document-element possessing the id of "message"*/
     let message = document.getElementById("message").value;
         
-    /*Call the displayValues function using the parameter of numbers, which was passed through from the previous function*/
-    let revMessage = reverse(message);
+    /* Within the scope-block of the function create a variable of "reversedMessage" that is defined as the value of the called function "reverse" and the value of the pass-through variable "message"*/
+    let reversedMessage = reverse(message);
 
-    /*Within the else portion  of the statement enter the Sweet Alert*/
-    displayMessage(revMessage);        
+    /*Call the function "displayMessage", which has the the vaalue of the pass-through variable "reversedMessage"*/
+    displayReversed(reversedMessage);        
 }
 
 
 
 //Create the Business Logic
 
-/*Declare a new function which calls the built in generateNumbers function and possesses the parameters of start and stop*/
+/*Declare a new function which calls the "reverse" function and possesses the parameter of message*/
 function reverse(message){
 
-    //string? array of characters
-    let reverseMessage = "";
+    //Note a string is array of characters
 
-    //Create a for-loop which declares a variable of i. the variable of i will consist of the previously defined "start" paramenter and as long as "i" is less than the previously defined stop, add 1 to the value. decrementing forloop 
+    /*Create a variable of "textString" which is defined as a text string*/
+    let reversedString = "";
+
+    //Create a for-loop where we  create a variable of index which is defined as the value of the length of the variable "message" minus 1. As long as the index is greater to or equal than 0 subtract one from the value of index. This is a decrementing for-loop*/
     for (let index = message.length-1; index >= 0; index--){
 
-        reverseMessage += message[index];
-
-        /*Within the scope of the loop, call the push function, which places the value of variable numbers within an array consisting of value of i,*/
-        let currentLetter = message[index];        
+        /*The value of variable "index" within the variable message accumulates the value of the variable "textString"*/
+        reversedString += message[index];
+    
     }
 
     //Return the vaule for numbers
-    return reverseMessage;
+    return reversedString;
 }
 
 
 //Create the View Function
 
 /*Declare a function which calls the built in displayNumbers function and possesses the parameter of numbersArray.*/
-function displayMessage(revMessage){
+function displayReversed(reversedMessage){
 
-    /*Create a variable of results which will be deined as the value contained within the element possesing the Id of "results"*/
+    /*Create a variable of results which is defined as teh value of the document elemetn possessing the Id of "results*/
     let results = document.getElementById("results");
 
-    //Create a variable of div
+    /*Add the value of "revMessage" to the class of the results message*/
     results.classList.add("revMessage");
-    //if divisble by both
-    results.innerHTML = revMessage;
+
+    /*The inner HTML of the results variable is defined as the value of the variable "reversedMessage"*/
+    results.innerHTML = reversedMessage;
 }
 
 //ExtraCredit Use Tables
